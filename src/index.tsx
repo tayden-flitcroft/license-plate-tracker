@@ -12,7 +12,7 @@ import { LicensePlateTracker } from '@/components/LicensePlateTracker'
 import { LicensePlateTrackerProvider } from '@/context/LicensePlateTrackerContext'
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyB7dyMNQnFIthIo9HPao1sVbZcFy2PcKlA',
+  apiKey: import.meta.env.FIREBASE_API_KEY,
   authDomain: 'license-plate-tracker-7e0d0.firebaseapp.com',
   projectId: 'license-plate-tracker-7e0d0',
   storageBucket: 'license-plate-tracker-7e0d0.appspot.com',

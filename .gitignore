@@ -71,3 +71,7 @@ node_modules/
 dist
 
 .yarn/*
+.env*
+.flaskenv*
+!.env.project
+!.env.vault
