@@ -13,6 +13,10 @@ jobs:
       DOTENV_KEY: ${{ secrets.DOTENV_KEY }}
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@4
+        with:
+          node-version-file: '.nvmrc'
+      - run: corepack enable
       - run: yarn && yarn build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
