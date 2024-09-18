@@ -1,0 +1,41 @@
+{
+  "name": "license-plate-tracker",
+  "packageManager": "yarn@4.5.0",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "yarn firebase emulators:start & vite"
+  },
+  "dependencies": {
+    "@nextui-org/react": "^2.4.7",
+    "@nextui-org/system": "^2.2.6",
+    "@nextui-org/theme": "^2.2.10",
+    "firebase": "^10.13.1",
+    "framer-motion": "^11.5.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-simple-maps": "^3.0.0",
+    "tailwindcss": "^3.4.11"
+  },
+  "devDependencies": {
+    "@types/prop-types": "^15",
+    "@types/react-dom": "^18",
+    "@types/react-simple-maps": "^3",
+    "@typescript-eslint/eslint-plugin": "^8.5.0",
+    "@typescript-eslint/parser": "^8.5.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "eslint": "^9.10.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "firebase-tools": "^13.17.0",
+    "nextui-cli": "^0.3.4",
+    "postcss": "^8.4.47",
+    "prettier": "^3.3.3",
+    "prop-types": "^15.8.1",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.5",
+    "vite-tsconfig-paths": "^5.0.1"
+  }
+}
