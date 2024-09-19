@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 
-import { Divider, Link, Navbar, NavbarBrand, NavbarContent, NavbarMenu, NavbarMenuItem, NavbarMenuToggle } from '@nextui-org/react'
+import { Divider, Link, Navbar, NavbarBrand, NavbarContent, NavbarMenu, NavbarMenuItem, NavbarMenuToggle, Snippet } from '@nextui-org/react'
 
 import { setShowChangeIDModal } from '@/context/action-creators'
 import { LicensePlateTrackerContext } from '@/context/LicensePlateTrackerContext'
@@ -19,9 +19,13 @@ export const NavigationBar: React.FC = () => {
         </NavbarBrand>
       </NavbarContent>
       <NavbarMenu className='bg-slate-200 border-t border-slate-300'>
-        <div className='text-sm font-light text-slate-500'>
-          Current Tracker ID: <span className='font-medium'>{state.trackerID}</span>
-        </div>
+        <NavbarMenuItem className='flex justify-between items-center'>
+          Current Tracker ID:
+          <Snippet className='float-right' hideSymbol variant='bordered'>
+            {state.trackerID}
+          </Snippet>
+        </NavbarMenuItem>
+        <Divider />
         <NavbarMenuItem>
           <Link className='cursor-pointer' href='#' color='primary' onPress={() => dispatch(setShowChangeIDModal(true))}>
             Change License Plate Tracker ID
