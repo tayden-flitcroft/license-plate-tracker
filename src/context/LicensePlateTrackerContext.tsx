@@ -4,10 +4,11 @@ import { getDatabase, onValue, ref } from 'firebase/database'
 
 import { parseDate } from '@internationalized/date'
 
-import { setDBData, setStateSeenDates } from './action-creators'
+import { setDBData, setIsSmallView, setStateSeenDates } from './action-creators'
 import { initialState, reducer } from './reducer'
 
 import { LicensePlateTrackerState } from '@/@types'
+import { SMALL_VIEW_WIDTH } from '@/helpers/constants'
 
 interface LicensePlateTrackerContextData {
   dispatch: (props: any) => void
@@ -46,6 +47,18 @@ export const LicensePlateTrackerProvider: React.FC<React.PropsWithChildren> = ({
       )
     }
   }, [state.selectedState, state.dbData])
+
+  useEffect(() => {
+    const handleResize = () => {
+      dispatch(setIsSmallView(window.innerWidth <= SMALL_VIEW_WIDTH))
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
 
   return <LicensePlateTrackerContext.Provider value={{ dispatch, state }}>{children}</LicensePlateTrackerContext.Provider>
 }

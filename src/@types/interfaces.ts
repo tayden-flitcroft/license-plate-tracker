@@ -2,6 +2,7 @@ import { StatesList } from './enums'
 
 export interface LicensePlateTrackerState {
   dbData: DbData
+  isSmallView: boolean
   selectedState?: keyof typeof StatesList
   showA2HSBanner: boolean
   showChangeIDModal: boolean

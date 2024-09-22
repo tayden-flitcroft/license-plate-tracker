@@ -17,3 +17,6 @@ export const setShowInitialTrackerIDModal = (shouldShow: boolean) => ({ type: SE
 
 export const SET_STATE_SEEN_DATES = 'set-state-seen-dates'
 export const setStateSeenDates = (stateSeenDates: StateSeenDates[]) => ({ type: SET_STATE_SEEN_DATES, stateSeenDates })
+
+export const SET_IS_SMALL_VIEW = 'set-is-small-view'
+export const setIsSmallView = (isSmallView: boolean) => ({ type: SET_IS_SMALL_VIEW, isSmallView })

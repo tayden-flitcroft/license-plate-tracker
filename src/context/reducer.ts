@@ -1,10 +1,13 @@
 import * as ActionCreators from './action-creators'
 
+import { SMALL_VIEW_WIDTH } from '@/helpers/constants'
+
 export const initialState = {
   dbData: {
     dates: {},
     states: {}
   },
+  isSmallView: window.innerWidth <= SMALL_VIEW_WIDTH,
   showChangeIDModal: false,
   showInitialTrackerIdModal: !localStorage.getItem('__TRACKER_ID__'),
   trackerID: localStorage.getItem('__TRACKER_ID__') ?? ''
@@ -48,6 +51,12 @@ export const reducer = (state: any, action: any) => {
       return {
         ...state,
         stateSeenDates: action.stateSeenDates
+      }
+    }
+    case ActionCreators.SET_IS_SMALL_VIEW: {
+      return {
+        ...state,
+        isSmallView: action.isSmallView
       }
     }
     default:

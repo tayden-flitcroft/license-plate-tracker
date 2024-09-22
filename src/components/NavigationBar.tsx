@@ -9,11 +9,11 @@ export const NavigationBar: React.FC = () => {
   const { state, dispatch } = useContext(LicensePlateTrackerContext)
 
   return (
-    <Navbar className='bg-slate-200'>
+    <Navbar className='bg-slate-200' maxWidth='full'>
       <NavbarContent>
         <NavbarMenuToggle />
       </NavbarContent>
-      <NavbarContent className='sm:hidden pr-3' justify='center'>
+      <NavbarContent className='pr-3' justify='center'>
         <NavbarBrand>
           <p className='font-bold text-slate-800'>License Plate Tracker</p>
         </NavbarBrand>
