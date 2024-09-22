@@ -20,7 +20,7 @@ export const StatesCounter: React.FC = () => {
           Only <span className='font-bold text-green-600'>{TOTAL_STATES - totalTrackedStates}</span> left to go!
         </div>
       </div>
-      <Progress size='md' value={totalTrackedStates} maxValue={TOTAL_STATES} showValueLabel={false} color='success' className='max-w-md' />
+      <Progress size='md' value={totalTrackedStates} maxValue={TOTAL_STATES} showValueLabel={false} color='success' className='w-full' />
     </div>
   )
 }

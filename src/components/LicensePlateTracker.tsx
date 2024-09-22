@@ -6,13 +6,13 @@ const Map = lazy(() => import('@/components/Map').then(module => ({ default: mod
 const NavigationBar = lazy(() => import('@/components/NavigationBar').then(module => ({ default: module.NavigationBar })))
 const SetInitialTrackerIdModal = lazy(() => import('@/components/SetInitialTrackerIdModal').then(module => ({ default: module.SetInitialTrackerIdModal })))
 const StatesCounter = lazy(() => import('@/components/StatesCounter').then(module => ({ default: module.StatesCounter })))
-const StateSelector = lazy(() => import('@/components/StateSelector').then(module => ({ default: module.StateSelector })))
 const StateSeenInstance = lazy(() => import('@/components/StateSeenInstance').then(module => ({ default: module.StateSeenInstance })))
+const StateSelector = lazy(() => import('@/components/StateSelector').then(module => ({ default: module.StateSelector })))
 
-import { useMap } from '@/hooks/useMap'
+import { useConditionalElements } from '@/hooks/useConditonalElements'
 
 export const LicensePlateTracker: React.FC = (): React.ReactElement => {
-  const { renderDateSelection, renderStatesCounter, renderStateSeenInstance } = useMap()
+  const { renderDateSelection, renderStatesCounter, renderStateSeenInstance } = useConditionalElements()
 
   const dateSelection = renderDateSelection({
     renderSelection: <DateSelection />,

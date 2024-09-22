@@ -17,13 +17,19 @@ interface RenderStateSeenInstanceProps {
   renderNothing: React.ReactElement
 }
 
-interface UseMap {
+interface RenderA2HSBannerProps {
+  renderBanner: React.ReactElement
+  renderNothing: React.ReactElement
+}
+
+interface UseConditionalElements {
+  renderA2HSBanner: (props: RenderA2HSBannerProps) => React.ReactElement
   renderDateSelection: (props: RenderDateSelectionProps) => React.ReactElement
   renderStatesCounter: (props: RenderStatesCounterProps) => React.ReactElement
   renderStateSeenInstance: (props: RenderStateSeenInstanceProps) => React.ReactElement
 }
 
-export const useMap = (): UseMap => {
+export const useConditionalElements = (): UseConditionalElements => {
   const { state } = useContext(LicensePlateTrackerContext)
 
   const renderDateSelection = ({ renderSelection, renderNothing }: RenderDateSelectionProps): React.ReactElement => {
@@ -50,7 +56,16 @@ export const useMap = (): UseMap => {
     return renderNothing
   }
 
+  const renderA2HSBanner = ({ renderBanner, renderNothing }: RenderA2HSBannerProps): React.ReactElement => {
+    if (state.showA2HSBanner && state.trackerID) {
+      return renderBanner
+    }
+
+    return renderNothing
+  }
+
   return {
+    renderA2HSBanner,
     renderDateSelection,
     renderStatesCounter,
     renderStateSeenInstance

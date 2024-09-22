@@ -2,16 +2,17 @@ import { StatesList } from './enums'
 
 export interface LicensePlateTrackerState {
   dbData: DbData
-  showChangeIDModal: boolean
   selectedState?: keyof typeof StatesList
+  showA2HSBanner: boolean
+  showChangeIDModal: boolean
   showInitialTrackerIdModal: boolean
-  trackerID: string
   stateSeenDates: StateSeenDates[]
+  trackerID: string
 }
 
 export interface StateSeenDates {
-  key: number | string
   date: string
+  key: number | string
   timesSeen: number
 }
 
